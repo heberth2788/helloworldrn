@@ -1,15 +1,26 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { Stack } from "expo-router";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <Stack 
+      screenOptions = {{
+        title: "Hello World RN",
+        headerStyle: { backgroundColor: "lightblue" },
+        headerTitleStyle: { color: "black", fontWeight: "bold" },
+      }}
+    >
+        <Stack.Screen 
+          name = "index" 
+          options = {{ title: "Main Screen", /* headerShown: false */ }}
+        />
+        <Stack.Screen 
+          name = "my-report" 
+          options = {{ title: "My Report" }} 
+        />
+        <Stack.Screen
+          name = "add-info"
+          options = {{ title: "Add Info" }}
+        />
+    </Stack>
   );
 }
