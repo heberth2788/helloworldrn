@@ -6,6 +6,8 @@ type MyDashboard2Props = {
     random?: number;
 }
 
-export default function MyDashboard2({ myNum, myName, random }: MyDashboard2Props) {
+export default function MyDashboard2(
+    { myNum, myName, random }: MyDashboard2Props,
+) {
     return <Text>My Dashboard. {myNum}, {myName} [{random ?? "random N/A"}] By HD.</Text>;
 }

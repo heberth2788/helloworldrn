@@ -10,16 +10,8 @@ export default function RootLayout() {
       }}
     >
         <Stack.Screen 
-          name = "index" 
+          name = "(tabs)" 
           options = {{ title: "Main Screen", /* headerShown: false */ }}
-        />
-        <Stack.Screen 
-          name = "my-report" 
-          options = {{ title: "My Report" }} 
-        />
-        <Stack.Screen
-          name = "add-info"
-          options = {{ title: "Add Info" }}
         />
     </Stack>
   );
