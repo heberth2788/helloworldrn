@@ -4,6 +4,7 @@ import ChildrenContainer from "@/feature/shared/ChildrenContainer";
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Button, Image, StyleProp, StyleSheet, Text, View } from "react-native";
+import "../../../global.css";
 
 export default function MainScreen() {
 
@@ -33,7 +34,7 @@ export default function MainScreen() {
 
       <ChildrenContainer>1988</ChildrenContainer>
 
-      <Text> I'm {imHungry ? "really" : "not"} starving </Text>
+      <Text className="text-3xl text-blue-800"> I'm {imHungry ? "really" : "not"} starving </Text>
       <Button 
         title = "Give me food" 
         onPress = { () => setImHungry(false) }
