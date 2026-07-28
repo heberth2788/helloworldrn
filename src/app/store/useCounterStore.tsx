@@ -9,15 +9,20 @@ type CounterState = {
     reset: () => void;
     name: string;
     putName: (newName: string) => void;
+    logName: () => void;
 }
 
 // 2. Create the store (hook-based)
-export const useCounterStore = create<CounterState>((set) => ({
+export const useCounterStore = create<CounterState>((set, get) => ({
     count: 0,
     setCounter: (num) => set((state) => ({ count: num })),
     increment: () => set((state) => ({ count: state.count + 1 })),
     decrement: () => set((state) => ({ count: state.count - 1 })), 
     reset: () => set((state) => ({ count: 0 })),
     name: '',
-    putName: (newName) => set((state) => ({ name: newName }))
+    putName: (newName) => set((state) => ({ name: newName })),
+    logName: () => { 
+        const currentName: string = get().name; 
+        console.log("Current name = ${ currentName }");
+    }
 }));

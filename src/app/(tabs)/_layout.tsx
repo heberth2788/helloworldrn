@@ -39,6 +39,15 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name = "ComponentZustand"
+        options = {{
+          title: 'Zustand',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name = "star" color = {color} size = {size} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
